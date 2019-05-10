@@ -104,7 +104,10 @@
   .brand {
     display: flex;
     align-items: center;
-    @include centering(15%);
+
+    @media (max-width: 500px) {
+      @include centering(12%);
+    }
   }
 
   // & - selects parent element
@@ -119,11 +122,21 @@
   height: 90vh;
   display: flex;
   align-items: center;
+  @media (max-width: 900px) {
+    height: 70vh;
+  }
 
   &-left {
     width: 40%;
     position: relative;
     left: -200px;
+    @media (max-width: 1300px) {
+      left: -150px;
+    }
+    @media (max-width: 800px) {
+      display: none;
+    }
+
     img {
       width: 100%;
       opacity: 0.7;
@@ -137,15 +150,27 @@
     align-items: center;
     padding: 0 100;
     box-sizing: border-box;
+    @media (max-width: 1300px) {
+      padding: 0 50px;
+    }
+    @media (max-width: 800px) {
+      width: 100%;
+    }
 
     .stars {
       margin: 30px 0;
+      @media (max-width: 1000px) {
+        margin: 15px 0;
+      }
     }
 
     .star {
       font-size: 15px;
       color: $color-primary;
       margin-left: 10px;
+      @media (max-width: 1000px) {
+        font-size: 12px;
+      }
     }
     .description {
       font-family: $font-josefinSans;
@@ -156,6 +181,17 @@
 
       &::first-letter {
         padding-left: 50px;
+      }
+
+      @media (max-width: 1600px) {
+        font-size: 18px;
+      }
+      @media (max-width: 1000px) {
+        font-size: 14px;
+      }
+
+      @media (max-width: 500px) {
+        font-size: 12px;
       }
     }
   }
@@ -197,6 +233,9 @@
       &:hover {
         color: $color-primary;
       }
+      @media (max-width: 1000px) {
+        font-size: 25px;
+      }
     }
   }
 
@@ -205,5 +244,10 @@
     font-size: 18px;
     color: $color-secondary;
     @include textStyles(capitalize);
+    @media (max-width: 800px) {
+      width: 70%;
+      margin: auto;
+      text-align: center;
+    }
   }
 }
