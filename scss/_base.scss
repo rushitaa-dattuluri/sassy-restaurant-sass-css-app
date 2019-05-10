@@ -5,6 +5,7 @@ $color-dark: #262626;
 $color-black: #000;
 $color-primary: #d3ab55;
 $color-secondary: #bbb;
+$color-white: #fff;
 
 // fonts
 $font-dancingScript: "Dancing Script", cursive;
@@ -19,10 +20,10 @@ $font-nunito: "Nunito", san-serrif;
   align-items: center;
 }
 
-@mixin textStyles {
+@mixin textStyles($transform: uppercase) {
   font-weight: 300;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  text-transform: $transform;
 }
 
 @mixin centering($topValue) {
@@ -30,6 +31,12 @@ $font-nunito: "Nunito", san-serrif;
   top: $topValue;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+// Placeholder
+%fullSpace {
+  width: 100%;
+  height: 100%;
 }
 
 * {
